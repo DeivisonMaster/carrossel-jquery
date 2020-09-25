@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $('.d1').click(function(){
+                $('div p').text('clique dado!');
+            }).dblclick(function (){
+                $('div p').text('dois cliques dado!');
+            });
+
+            $('.d2').focusin(function(){
+                $('div p').text('foco dado!');
+            }).focusout(function (){
+                $('div p').text('foco retirado!');
+            });
+
+            $('.d1').hover(function(){
+                $('div p').text('mouse passado!');
+            });
+
+            $('.d3').mousedown(function(){
+                $('div p').text('mouse pressionado');
+            }).mouseup(function(){
+                $('div p').text('mouse retirado');
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="d1" style="width: 500px; height: 50px; border: 1px solid #000; margin: 0 auto;">
+        <p></p>
+    </div>
+
+    <br/>
+
+    <div class="d2" style="width: 500px; height: 50px; border: 1px solid #000; margin: 0 auto;">
+        <p></p>
+    </div>
+
+    <br/>
+
+    <div class="d3" style="width: 500px; height: 50px; border: 1px solid #000; margin: 0 auto;">
+        <p></p>
+    </div>
+    
+</body>
+</html>

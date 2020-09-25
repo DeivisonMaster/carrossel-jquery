@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $('html body').css('height', '2000px');
+
+            $(window).scroll(function(){
+                var topo = $(this).scrollTop();
+                if(topo > 30){
+                    $('img').fadeOut(1000);
+                }else{
+                    $('img').fadeIn(1000);
+                }
+
+
+            });
+        });
+
+        function redimensionaImagem(){
+            $(window).resize(function(){
+                var larguraJanela = $(window).width();
+                var alturaJanela  = $(window).height();
+
+                $('img').width(larguraJanela).height(alturaJanela);
+            });
+        }
+
+        function trataImagem(){
+            $('img').on('error', function(){
+                $(this).attr('src', 'img/erro.jpg');
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <img src="img/jquery.png" alt="teste">
+    
+</body>
+</html>
